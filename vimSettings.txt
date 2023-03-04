@@ -1,0 +1,12 @@
+:set number
+:set nowrap
+:set cursorline
+:set cursorcolumn   
+:set autoindent
+:set shiftwidth=4
+:set tabstop=4
+:set hlsearch
+:set smartcase
+:set wildmenu
+:set spell spelllang=en_us                                                                                                           
+syntax on
