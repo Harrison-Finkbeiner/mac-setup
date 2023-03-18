@@ -1,4 +1,4 @@
-:set number
+:set number                                                                                                                                                   
 :set nowrap
 :set cursorline
 :set cursorcolumn   
@@ -8,5 +8,10 @@
 :set hlsearch
 :set smartcase
 :set wildmenu
-:set spell spelllang=en_us                                                                                                           
+:set spell spelllang=en_us                                                                                                          
+:set omnifunc=javascriptcomplete#CompleteJS
+filetype plugin on
+:set omnifunc=syntaxcomplete#Complete#
+:set backup
+:set undofile
 syntax on
