@@ -1,4 +1,4 @@
-:set number                                                                                                                                                   
+:set number                                                                 
 :set nowrap
 :set cursorline
 :set cursorcolumn   
@@ -8,10 +8,35 @@
 :set hlsearch
 :set smartcase
 :set wildmenu
-:set spell spelllang=en_us                                                                                                          
 :set omnifunc=javascriptcomplete#CompleteJS
 filetype plugin on
 :set omnifunc=syntaxcomplete#Complete#
 :set backup
 :set undofile
 syntax on
+filetype plugin on
+
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+
+Plug 'instant-markdown/vim-instant-markdown', {'for': 'markdown', 'do': 'yarn install'}
+Plug 'preservim/nerdtree'
+" Fzf plug in
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+" Ale plugin 
+Plug 'w0rp/ale'
+" Snipnate plug in (TODO need to check parser and update value)
+"Plug 'MarcWeber/vim-addon-mw-utils'
+"Plug 'tomtom/tlib_vim'
+"Plug 'garbas/vim-snipmate'
+
+  " Optional:
+"Plug 'honza/vim-snippets'
+call plug#end()
+
